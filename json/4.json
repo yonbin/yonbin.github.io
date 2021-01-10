@@ -1,0 +1,4 @@
+{
+    "topic":"4 简单计算",
+    "desc": "<p>输入三个整数，求 (a+b)*c 结果。</p><p><strong>输入格式</strong></p><p>输入两个整数A,B,C，用空格隔开，0≤A,B,C≤1000</p><p><strong>输出格式</strong></p><p>输出一个整数，表示 (a+b)*c 结果</p><p><strong>样例输入</strong></p><p><code> 2 3 4</code></p><p><strong>样例输出</strong></p><p><code>20</code></p>"
+}

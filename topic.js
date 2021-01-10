@@ -95,9 +95,11 @@ if (id) {
         $('#desc').html(data.desc).find('code').parent().addClass('bg-light');
     })
 
-    getData(id,function(res){
-        editor.setValue(res.results[0].topic_answer);
-        editor.clearSelection();
+    getData(id, function (res) {
+        if (res.results && res.results.length > 0) {
+            editor.setValue(res.results[0].topic_answer);
+            editor.clearSelection();
+        }
     });
 }
 

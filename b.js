@@ -65,7 +65,6 @@ function getData(topicId,callBack) {
         "method": "GET",
         "headers": header,
         success: function (res) {
-            console.log(res);
             if(callBack){
                 callBack(res);
             }

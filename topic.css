@@ -35,7 +35,9 @@ textarea {
     left    : 0;
     z-index : 5;
 }
-#topic code{
-    padding:20px;
+#desc .bg-light{
+    padding:5px;
+}
+#desc .bg-light code{
     color: #000;
 }
