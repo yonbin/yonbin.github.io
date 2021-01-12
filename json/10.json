@@ -1,4 +1,4 @@
 {
     "topic":"10 计算总成绩",
-    "desc": "<p>编写一个程序，计算你语文、数学、英语的总成绩。</p><p><strong>输入格式</strong></p><p>第一行包含一个整数，表示语文成绩；</p><p>第二行包含一个整数，表示数学成绩；</p><p>第三行包含一个整数，表示英文成绩；</p><p><strong>输出格式</strong></p><p>输出格式为“SCORE = X”，X为该总成绩。</p><p><strong>样例输入</strong></p><p><code> 95<br>90<br>100</code></p><p><strong>样例输出</strong><code>SCORE = 285</code></p>"
+    "desc": "<p>编写一个程序，计算你语文、数学、英语的总成绩。</p><p><strong>输入格式</strong></p><p>第一行包含一个整数，表示语文成绩；</p><p>第二行包含一个整数，表示数学成绩；</p><p>第三行包含一个整数，表示英语成绩；</p><p><strong>输出格式</strong></p><p>输出格式为“SCORE = X”，X为该总成绩。</p><p><strong>样例输入</strong></p><p><code> 95<br>90<br>100</code></p><p><strong>样例输出</strong><code>SCORE = 285</code></p>"
 }
