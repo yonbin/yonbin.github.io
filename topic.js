@@ -1,5 +1,7 @@
 checkUserStatus();
 
+var objectId;
+
 var editor = ace.edit("editor");
 
 function buttonEnable(value) {
@@ -68,7 +70,13 @@ function compile() {
             if ('program_error' in result) {
                 $('#stdout').addClass('error-output text-danger');
             }
-            submitData("1", code);
+            if (!objectId) {
+                submitData(id, code, function (objId) {
+                    objectId = objId;
+                });
+            }else{
+                updateData(objectId,code);
+            }
         },
         error: xhr => {
             buttonEnable(true);
@@ -97,6 +105,7 @@ if (id) {
 
     getData(id, function (res) {
         if (res.results && res.results.length > 0) {
+            objectId = res.results[0].objectId;
             editor.setValue(res.results[0].topic_answer);
             editor.clearSelection();
         }

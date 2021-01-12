@@ -77,7 +77,7 @@ function getData(topicId,callBack) {
     $.ajax(settings);
 }
 
-function submitData(topicId, topicAnswer) {
+function submitData(topicId, topicAnswer,callback) {
     var username = $.cookie('username');
     var settings = {
         "async": true,
@@ -87,7 +87,30 @@ function submitData(topicId, topicAnswer) {
         "method": "POST",
         "headers": header,
         success: function (res) {
-            console.log(res);
+
+           if(callback){
+               callback(res.objectId);
+               console.log(res.objectId);
+           }
+        },
+        error: function (res) {
+
+        }
+    }
+
+    $.ajax(settings);
+}
+
+function updateData(objectId, topicAnswer) {
+    var username = $.cookie('username');
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": submitUrl+'/'+objectId,
+        data: JSON.stringify({topic_answer: topicAnswer }),
+        "method": "PUT",
+        "headers": header,
+        success: function (res) {
         },
         error: function (res) {
 
