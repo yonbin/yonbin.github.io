@@ -50,7 +50,7 @@
                         <div style="text-align: center;">
                             <h2>在线题库</h2>
                         </div>
-                        <table class="table table-sm table-striped">
+                        <table class="table table-sm table-striped" id="topicTable">
                             <thead>
                                 <tr>
                                     <th scope="co1" style="width: 80px; text-align: center;">#</th>
@@ -58,68 +58,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">1</th>
-                                    <td>
-                                        <a href="topic.html?id=1"> Hello,Word</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">2</th>
-                                    <td>
-                                        <a href="topic.html?id=2"> 输出第 2 个 数</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">3</th>
-                                    <td>
-                                        <a href="topic.html?id=3"> A + B</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">4</th>
-                                    <td>
-                                        <a href="topic.html?id=4"> 计算 (a+b)*c</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">5</th>
-                                    <td>
-                                        <a href="topic.html?id=5"> 带余数除法</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">6</th>
-                                    <td>
-                                        <a href="topic.html?id=6"> 输出不同类型的变量</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">7</th>
-                                    <td>
-                                        <a href="topic.html?id=7"> 换行打印三角形</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">8</th>
-                                    <td>
-                                        <a href="topic.html?id=8"> 一颗白菜多少钱？</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">9</th>
-                                    <td>
-                                        <a href="topic.html?id=9"> 可以买几斤白菜？</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="width: 80px; text-align: center;">10</th>
-                                    <td>
-                                        <a href="topic.html?id=10"> 计算总成绩</a>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
+                        <nav aria-label="Page navigation example" id="pager">
+                            <ul class="pagination">
+
+                            </ul>
+                        </nav>
                     </div>
                 </div>
 
@@ -132,12 +78,39 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
-    <script src="common.js"></script>
-    <script src="b.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/b.js"></script>
+    <script src="/json/0.js"></script>
     <script>
-        $(function () {
+        var $tbody;
+        function goto(curr) {
+            $tbody.empty();
 
+            var newData = data.slice((curr-1)*10, (curr-1)*10 + 10);
+            console.log(newData);
+            $.each(newData, function (index, item) {
+                var html = '<tr>';
+                html += '<th scope="row" style="width: 80px; text-align: center;">' + item.id + '</th>';
+                html += '<td><a href="topic.html?id=' + item.id + '">' + item.title + '</a></td>';
+                html += '</tr>';
+
+                $tbody.append($(html));
+            });
+        }
+
+        $(function () {
             checkUserStatus();
+            $tbody = $('#topicTable tbody');
+            var page = Math.ceil(data.length / 10);
+            var $pager = $('#pager ul');
+
+            for (var i = 1; i <= page; i++) {
+                var html = '<li class="page-item"><a class="page-link" href="#" onclick="goto(' + i + ')">' + i + '</a></li>';
+                $pager.append($(html));
+            }
+
+            goto(1);
+
         });
     </script>
 </body>

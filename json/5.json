@@ -1,4 +1,5 @@
 {
     "topic":"5 带余数除法",
-    "desc": "<p>定义两个整型变量，分别求整数部分和余数部分，然后组合整数和余数输出。</p><p><strong>输入格式</strong></p><p>无</p><p><strong>输出格式</strong></p><p>整数.余数</p><p><strong>样例输入</strong></p><p><code> 无</code></p><p><strong>样例输出</strong></p><p><code> 3.6</code></p>"
+    "desc": "<p>定义两个整型变量，第一输入为被除数，第二输出为除数。分别求商和余数，然后输出。</p><p><strong>输入格式</strong></p><p>输入两个整数， 0 < A,B < 100</p><p><strong>输出格式</strong></p><p>第一行输出商，第二行输出余数</p><p><strong>样例输入</strong></p><p><code> 5 2 </code></p><p><strong>样例输出</strong></p><p><code> 2<br>1 </code></p>"
+   
 }
