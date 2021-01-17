@@ -18,29 +18,7 @@
 
 <body style="background-color:#f2f2f2;">
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">卓培信息学</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.html">首页</span></a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">C++语法</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">C++语法练习</a>
-                    </li> -->
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/about/" id="username" style="color: #fff;"></a></li>
-                </ul>
-            </div>
-        </nav>
+
     </header>
     <div class="container" style="margin-top: 70px;">
         <div class="row">
@@ -87,7 +65,6 @@
             $tbody.empty();
 
             var newData = data.slice((curr-1)*10, (curr-1)*10 + 10);
-            console.log(newData);
             $.each(newData, function (index, item) {
                 var html = '<tr>';
                 html += '<th scope="row" style="width: 80px; text-align: center;">' + item.id + '</th>';
@@ -99,8 +76,13 @@
         }
 
         $(function () {
+            $('header').load('/top.html',function(){
+                $('#item2').addClass('active');
+            });;
             checkUserStatus();
+
             $tbody = $('#topicTable tbody');
+
             var page = Math.ceil(data.length / 10);
             var $pager = $('#pager ul');
 

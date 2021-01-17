@@ -51,7 +51,7 @@ function checkUserStatus() {
     $.ajax(settings);
 }
 
-function getData(topicId,callBack) {
+function getData(topicId, callBack) {
     var username = $.cookie('username');
     var queryParam = {
         username: username,
@@ -65,7 +65,7 @@ function getData(topicId,callBack) {
         "method": "GET",
         "headers": header,
         success: function (res) {
-            if(callBack){
+            if (callBack) {
                 callBack(res);
             }
         },
@@ -77,7 +77,7 @@ function getData(topicId,callBack) {
     $.ajax(settings);
 }
 
-function submitData(topicId, topicAnswer,callback) {
+function submitData(topicId, topicAnswer, callback) {
     var username = $.cookie('username');
     var settings = {
         "async": true,
@@ -88,10 +88,28 @@ function submitData(topicId, topicAnswer,callback) {
         "headers": header,
         success: function (res) {
 
-           if(callback){
-               callback(res.objectId);
-               console.log(res.objectId);
-           }
+            if (callback) {
+                callback(res.objectId);
+                console.log(res.objectId);
+            }
+        },
+        error: function (res) {
+
+        }
+    }
+
+    $.ajax(settings);
+}
+function updateData(objectId, topicAnswer) {
+    var username = $.cookie('username');
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": submitUrl + '/' + objectId,
+        data: JSON.stringify({ topic_answer: topicAnswer }),
+        "method": "PUT",
+        "headers": header,
+        success: function (res) {
         },
         error: function (res) {
 
@@ -101,16 +119,63 @@ function submitData(topicId, topicAnswer,callback) {
     $.ajax(settings);
 }
 
-function updateData(objectId, topicAnswer) {
+function getTyping(callBack) {
+    var username = $.cookie('username');
+    var queryParam = {
+        username: username
+    }
+    var url = encodeURI("https://api2.bmob.cn/1/classes/tyeing?where=" + JSON.stringify(queryParam));
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": url,
+        "method": "GET",
+        "headers": header,
+        success: function (res) {
+            if (callBack) {
+                callBack(res);
+            }
+        },
+        error: function (res) {
+
+        }
+    }
+
+    $.ajax(settings);
+}
+
+function updateTyping(objectId, count) {
     var username = $.cookie('username');
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": submitUrl+'/'+objectId,
-        data: JSON.stringify({topic_answer: topicAnswer }),
+        "url": typingUrl + '/' + objectId,
+        data: JSON.stringify({ count: count }),
         "method": "PUT",
         "headers": header,
         success: function (res) {
+        },
+        error: function (res) {
+
+        }
+    }
+
+    $.ajax(settings);
+}
+
+function addTyping(id, count,callBack) {
+    var username = $.cookie('username');
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": typingUrl,
+        data: JSON.stringify({ username: username, id: id, count: count }),
+        "method": "POST",
+        "headers": header,
+        success: function (res) {
+            if (callback) {
+                callback(res.objectId);
+            }
         },
         error: function (res) {
 

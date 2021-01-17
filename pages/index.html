@@ -15,18 +15,26 @@
         .card-title {
             font-size: 28px;
         }
-        .lock{
+
+        .lock {
             background-color: #f8f9fa;
         }
-        .lock a{
-            color:#ccc;
+
+        .lock a {
+            color: #ccc;
+        }
+
+        .count {
+            font-size: 16px;
         }
     </style>
 </head>
 
 <body>
+    <header>
 
-    <div class="container" style="margin-top: 10px;">
+    </header>
+    <div class="container" style="margin-top: 70px;">
         <div class="row">
             <div class="col">
                 <h2>基准键</h2>
@@ -35,29 +43,30 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-body">
-                        <a href="exercise.html?id=1" class="card-title">f 和 j</a>
+                    <div class="card-body lock">
+                        <a href="exercise.html?id=1" id="id1" class="card-title">f 和 j <span
+                                class="count">0/20</span></a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-body  lock" >
+                    <div class="card-body  lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
-                        <a href="exercise.html?id=2"  class="card-title">d 和 k</a>
+                        <a href="exercise.html?id=2" class="card-title">d 和 k</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card  " >
+                <div class="card  ">
                     <div class="card-body lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
-                        <a href="exercise.html?id=dk" class="card-title">s 和 l</a>
+                        <a href="exercise.html?id=3" class="card-title">s 和 l</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" >
+                <div class="card">
                     <div class="card-body lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
                         <a href="exercise.html?id=dk" class="card-title">a 和 ;</a>
@@ -68,7 +77,7 @@
         <br>
         <div class="row">
             <div class="col-md-3">
-                <div class="card" >
+                <div class="card">
                     <div class="card-body lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
                         <a href="exercise.html?id=dk" class="card-title">g 和 h</a>
@@ -76,7 +85,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" >
+                <div class="card">
                     <div class="card-body lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
                         <a href="exercise.html?id=fj" class="card-title">练习 1</a>
@@ -84,7 +93,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" >
+                <div class="card">
                     <div class="card-body lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
                         <a href="exercise.html?id=fj" class="card-title">练习 2</a>
@@ -92,7 +101,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card" >
+                <div class="card">
                     <div class="card-body lock">
                         <i class="bi-lock-fill" style="font-size: 2rem; color:#ccc;"></i>
                         <a href="exercise.html?id=fj" class="card-title">练习 3</a>
@@ -104,7 +113,37 @@
     </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/b.js"></script>
+    <script>
+        $(function () {
+            $('header').load('/top.html', function () {
+                $('#item0').addClass('active');
+            });;
+            var index = layer.load(2);
+            getTyping(function (res) {
+                layer.close(index);
+                var count = 1;
+                var results = res.results;
+                if (results.length == 0) {
+
+                    return;
+                }
+
+
+                $.each(results, function (index, item) {
+                    $('#id'+item.id).find('.count').text(item.count+'/'+typingCount);
+                    if(item.count>=0){
+                        $('#id'+item.id).parent().removeClass('lock');
+                    }
+                });
+
+            });
+        });
+    </script>
+
 </body>
 
 </html>

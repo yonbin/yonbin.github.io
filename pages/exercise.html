@@ -35,17 +35,24 @@
             color: darkred;
             background: pink;
         }
+        .card-body h3 span{
+            font-size: 16px;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+    </header>
+    <br>
+    <br>
     <br>
     <div class="container">
         <div class="row">
             <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="animate__animated animate__bounce">f 和 j</h3>
+                        <h3 class="animate__animated animate__bounce">f 和 j <span class="success" >正确颜色</span> <span class="error">错误颜色</span></h3>
                         <hr />
                         <div id="content">
                         </div>
@@ -460,10 +467,15 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.1.1/layer.min.js"></script>
     <script src="/assets/js/common.js"></script>
     <script src="/json/typingData.js"></script>
     <script src="/assets/js/exercise.js"></script>
     <script>
+        $('header').load('/top.html', function () {
+            $('#item0').addClass('active');
+        });;
+
         const id = getQueryVariable("id");
         var data = typingData.find(o => o.id == id).data;
         var $content = $('#content');
@@ -506,8 +518,13 @@
             // }
             var $current = $content.find('.current');
             if ($current.length == 0) return;
-            if ($current.next().length == 0) {
-                console.log('end');
+            if ($current.next().length == 0 && e.keyCode != 8) {
+                if ($('#content').find('.error').length > 0) {
+                    layer.msg('有错误，请更正！', { icon: 7 });
+                    return;
+                }
+                // 结束
+                location.href = '/pages/success.html?id=' + id;
             }
 
             $('#keys .st0').removeClass('active');

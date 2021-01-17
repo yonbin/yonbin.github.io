@@ -1,4 +1,4 @@
 {
     "topic":"6 输出不同类型的变量",
-    "desc": "<p>分别换行输出：整型、字符、字符串、小数、布尔类型的变量</p><p><strong>输入格式</strong>无</p><p><strong>输出格式</strong>无</p><p><strong>样例输入</strong></p><p><code> 无</code></p><p><strong>样例输出</strong></p><p><code> 11aabc100.011</code></p>"
+    "desc": "<p>分别换行输出：整型、字符、字符串、小数、布尔类型的变量</p><p><strong>输入格式</strong>无</p><p><strong>输出格式</strong>无</p><p><strong>样例输入</strong></p><p><code> 无</code></p><p><strong>样例输出</strong></p><p><code> 11<br>a<br>abc<br>10<br>10.01<br>1</code></p>"
 }
