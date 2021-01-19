@@ -6,7 +6,6 @@ var submitUrl = ' https://api2.bmob.cn/1/classes/data';
 var typingUrl = ' https://api2.bmob.cn/1/classes/tyeing';
 var typingCount = 20;
 
-$('#username').text($.cookie("username"));
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);

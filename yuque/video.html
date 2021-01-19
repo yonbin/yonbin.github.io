@@ -38,6 +38,7 @@
         $(function () {
             $('header').load('/top.html',function(){
                 $('#item3').addClass('active');
+                $('#username').text($.cookie("username"));
             });
            $('iframe').height($(document).height()-80);
 

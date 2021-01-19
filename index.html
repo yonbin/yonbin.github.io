@@ -64,7 +64,7 @@
         function goto(curr) {
             $tbody.empty();
 
-            var newData = data.slice((curr-1)*10, (curr-1)*10 + 10);
+            var newData = data.slice((curr - 1) * 20, (curr - 1) * 20 + 20);
             $.each(newData, function (index, item) {
                 var html = '<tr>';
                 html += '<th scope="row" style="width: 80px; text-align: center;">' + item.id + '</th>';
@@ -76,14 +76,16 @@
         }
 
         $(function () {
-            $('header').load('/top.html',function(){
+            $('header').load('/top.html', function () {
                 $('#item2').addClass('active');
+                $('#username').text($.cookie("username"));
+
             });;
             checkUserStatus();
 
             $tbody = $('#topicTable tbody');
 
-            var page = Math.ceil(data.length / 10);
+            var page = Math.ceil(data.length / 20);
             var $pager = $('#pager ul');
 
             for (var i = 1; i <= page; i++) {

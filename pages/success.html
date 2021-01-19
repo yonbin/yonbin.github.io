@@ -32,6 +32,7 @@
         $(function () {
             $('header').load('/top.html', function () {
                 $('#item0').addClass('active');
+                $('#username').text($.cookie("username"));
             });
 
             const id = getQueryVariable("id");
