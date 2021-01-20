@@ -53,7 +53,7 @@
             <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="animate__animated animate__bounce">f 和 j <span class="success">正确颜色</span> <span
+                        <h3 class="animate__animated animate__bounce"><span id="title" style="font-size: 26px;"></span> <span class="success">正确颜色</span> <span
                                 class="error">错误颜色</span></h3>
                         <hr />
                         <div id="content">
@@ -418,15 +418,17 @@
         });;
 
         const id = getQueryVariable("id");
-        var data = typingData.find(o => o.id == id).data;
+        var currentItem = typingData.find(o => o.id == id);
+        var data = currentItem.data;
+        $('#title').text(currentItem.title);
         var $content = $('#content');
         var html = '<p class="line">';
         for (const ch of data) {
             html += '<span class="token_unit " data-val="' + ch + '"">' + ch + '</span>';
         }
-
         html += '</p>';
         $content.append($(html));
+
         var $firstLetter = $content.find('span').first().addClass('current');
         var firstLetter = $firstLetter.data('val');
 
@@ -459,10 +461,7 @@
             } else {
                 window.event.returnValue = false;
             }
-            // 阻止 F12
-            // if (!e.metaKey) {
-            //     e.preventDefault();
-            // }
+          console.log(e);
             var $current = $content.find('.current');
             if ($current.length == 0) return;
             if ($current.next().length == 0 && e.keyCode != 8) {
@@ -490,7 +489,6 @@
             var s = svgDoc.querySelector("svg");
 
             if ($current.data('val') == key) {
-
 
                 $current.addClass('success').removeClass('current');
                 $current.next().addClass('current');

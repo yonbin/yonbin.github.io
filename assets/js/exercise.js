@@ -1,5 +1,6 @@
 const keyCodes = {
     ' ': 'space',
+    ';': 'semicolon'
 };
 const keyHands = {
     'space': 'right',
