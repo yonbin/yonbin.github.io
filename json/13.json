@@ -1,0 +1,4 @@
+{
+    "topic":"12 工资",
+    "desc": "<p>求反三位数。</p><p><strong>输入格式</strong></p><p>输入一个整数，101&lt;=A&lt;=999。</p><p><strong>输出格式</strong></p><p>一个整数。</p><p><strong>样例输入</strong></p><p><code>789</code></p><p><strong>样例输出</strong></p><p><code>987</code></p>"
+}

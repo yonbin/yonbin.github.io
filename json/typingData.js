@@ -18,5 +18,10 @@ var typingData = [
         id: 4,
         title:'a和;',
         data: "a;;a ;;;; aaaa a;a; ;a;a ;;;a aaa; aa;;"
+    },
+    {
+        id: 5,
+        title:'g和h',
+        data: "gggh ghgh hghg hhhh gghh ghhg hhg hhgh"
     }
 ]

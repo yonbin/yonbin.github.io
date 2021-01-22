@@ -60,6 +60,7 @@
     <script src="/assets/js/b.js"></script>
     <script src="/json/0.js"></script>
     <script>
+
         var $tbody;
         function goto(curr) {
             $tbody.empty();
@@ -73,6 +74,8 @@
 
                 $tbody.append($(html));
             });
+
+            $('.card-body').height($tbody.height()+150);
         }
 
         $(function () {
