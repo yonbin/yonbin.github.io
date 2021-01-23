@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//at.alicdn.com/t/font_1955402_f2p86a040h9.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/student_tp.min.css">
+    <title>打字练习</title>
+    <style>
+        .success {
+            color: rgb(14, 99, 14);
+            background: rgb(231, 251, 211);
+        }
+
+        .error {
+            color: darkred;
+            background: pink;
+        }
+
+        .card-body h3 span {
+            font-size: 16px;
+        }
+
+        .lineItem {
+            width: 60px;
+            height: 60px;
+            float: left;
+            padding-top: 10px;
+            margin-right: 5px;
+            margin-top: 5px;
+            text-align: center;
+            font: 25px Verdana, "DejaVu Sans", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <button type="button" id="speed1" class="btn btn-primary">1 档</button>
+                    <button type="button" id="speed2" class="btn btn-secondary">2 档</button>
+                    <button type="button" id="speed3" class="btn btn-success">3 档</button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="animate__animated animate__bounce"><span id="title" style="font-size: 26px;"></span>
+                            <span class="success">正确颜色</span> <span class="error">错误颜色</span>
+                        </h3>
+                        <hr />
+                        <div id="content" style="height: 400px;">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/json/typingData.js"></script>
+    <script src="/assets/js/exercise.js"></script>
+    <script>
+
+        $('header').load('/top.html', function () {
+            $('#item0').addClass('active');
+            $('#username').text($.cookie("username"));
+        });;
+
+        const id = getQueryVariable("id");
+        var currentItem = typingData.find(o => o.id == id);
+        var data = currentItem.data;
+        $('#title').text(currentItem.title);
+        var $content = $('#content');
+
+        var animate = ['animate__bounce', 'animate__flash', 'animate__pulse',
+            'animate__rubberBand', 'animate__swing', 'animate__tada', 'animate__jello', 'animate__wobble'];
+
+        var total = 0;
+        var speed = 3000;
+        var currentLetter;
+        var interval;
+
+        $('#speed1').click(function () {
+            speed = 3000;
+            clearInterval(interval);
+            start();
+        });
+        $('#speed2').click(function () {
+            speed = 2000;
+            clearInterval(interval);
+            start();
+        });
+        $('#speed3').click(function () {
+            speed = 1000;
+            clearInterval(interval);
+            start();
+        });
+
+        function start() {
+            currentLetter = data[Math.round(Math.random() * (data.length - 1))];
+            buildLine();
+            interval = setInterval(function () {
+                currentLetter = data[Math.round(Math.random() * (data.length - 1))];
+                buildLine()
+                total = total + 1;
+                if (total >= 10) {
+                    clearInterval(interval);
+                    location.href = '/pages/success.html?id=' + id;
+                }
+            }, speed);
+        }
+        start();
+
+        function buildLine() {
+            var css = animate[Math.round(Math.random() * 8)];
+            var html = '<div class="lineItem error animate__animated ' + css + '">';
+            html += currentLetter;
+            html += '</div>';
+            $content.append(html);
+        }
+
+        $('body').keydown(function (e) {
+            if (e.key == currentLetter) {
+                console.log(currentLetter)
+                $content.find('div').last().removeClass('error').addClass('success');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
