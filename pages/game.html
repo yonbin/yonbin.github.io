@@ -94,6 +94,7 @@
         var speed = 3000;
         var currentLetter;
         var interval;
+        var successTotal = 0;
 
         $('#speed1').click(function () {
             speed = 3000;
@@ -118,9 +119,13 @@
                 currentLetter = data[Math.round(Math.random() * (data.length - 1))];
                 buildLine()
                 total = total + 1;
-                if (total >= 30) {
+                if (total >= 10) {
                     clearInterval(interval);
-                    location.href = '/pages/success.html?id=' + id;
+                    if (successTotal >= total - 2) {
+                        location.href = '/pages/success.html?id=' + id;
+                    } else {
+                        location.href = '/pages/error.html?total=' + total + '&success=' + successTotal;
+                    }
                 }
             }, speed);
         }
@@ -134,9 +139,10 @@
             $content.append(html);
         }
 
+
         $('body').keydown(function (e) {
             if (e.key == currentLetter) {
-                console.log(currentLetter)
+                successTotal += 1;
                 $content.find('div').last().removeClass('error').addClass('success');
             }
         });

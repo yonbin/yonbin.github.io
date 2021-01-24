@@ -33,5 +33,10 @@ var typingData = [
         id: 7,
         title: '练习2',
         data: "askdadallsaladsfall;lassasalladsaddsalsajaffkad;flasklasssadfallalfajakkajdadask"
+    },
+    {
+        id: 8,
+        title: '练习3',
+        data: "asdfghjkl;"
     }
 ]
