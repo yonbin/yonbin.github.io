@@ -118,7 +118,7 @@
                 currentLetter = data[Math.round(Math.random() * (data.length - 1))];
                 buildLine()
                 total = total + 1;
-                if (total >= 10) {
+                if (total >= 30) {
                     clearInterval(interval);
                     location.href = '/pages/success.html?id=' + id;
                 }
