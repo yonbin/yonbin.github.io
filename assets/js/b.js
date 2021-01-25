@@ -120,11 +120,8 @@ function updateData(objectId, topicAnswer) {
 }
 
 function getTyping(callBack) {
-    var username = $.cookie('username');
-    var queryParam = {
-        username: username
-    }
-    var url = encodeURI("https://api2.bmob.cn/1/classes/tyeing?where=" + JSON.stringify(queryParam));
+    var username = $.cookie("username");
+    var url = 'https://api2.bmob.cn/1/classes/tyeing?where=' + escape('{"username":"' + username + '"}');
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -163,7 +160,7 @@ function updateTyping(objectId, count) {
     $.ajax(settings);
 }
 
-function addTyping(id, count,callBack) {
+function addTyping(id, count, callBack) {
     var username = $.cookie('username');
     var settings = {
         "async": true,
