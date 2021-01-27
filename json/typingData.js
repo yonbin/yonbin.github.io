@@ -38,5 +38,11 @@ var typingData = [
         id: 8,
         title: '练习3',
         data: "asdfghjkl;"
+    },
+    {
+        id: 9,
+        title: 'r 和 u',
+        data: "rrruu uur ruru ururu uuuu rruu uurur rurrr"
     }
+
 ]
