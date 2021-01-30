@@ -181,12 +181,12 @@
                 }
                 $.each(results, function (index, item) {
                     $('#id'+item.id).find('.count').text(item.count+'/'+typingCount);
-                console.log(item.count)
-
                     if(item.count>=20){
                         $('#id'+(parseInt(item.id)+1)).parent().removeClass('lock');
                     }
                 });
+
+                $('.lock').find('a').attr('href','javascript:;');
 
             });
         });
