@@ -4,7 +4,7 @@ var checkSessionUrl = 'https://api2.bmob.cn/1/checkSession/';
 var loginUrl = 'https://api2.bmob.cn/1/login';
 var submitUrl = ' https://api2.bmob.cn/1/classes/data';
 var typingUrl = ' https://api2.bmob.cn/1/classes/tyeing';
-var typingCount = 20;
+var goalCount = 20;
 
 
 function getQueryVariable(variable) {

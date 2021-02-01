@@ -141,7 +141,7 @@ function getTyping(callBack) {
     $.ajax(settings);
 }
 
-function updateTyping(objectId, count) {
+function updateTypingCount(objectId, count) {
     var username = $.cookie('username');
     var settings = {
         "async": true,
@@ -160,7 +160,7 @@ function updateTyping(objectId, count) {
     $.ajax(settings);
 }
 
-function addTyping(id, count, callBack) {
+function addTypingCount(id, count, callBack) {
     var username = $.cookie('username');
     var settings = {
         "async": true,

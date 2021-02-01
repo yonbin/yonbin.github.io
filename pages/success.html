@@ -44,23 +44,28 @@
                 var results = res.results;
                 if (results.length == 0) {
                     $('#count').text(count);
-                    $('#residual').text(typingCount - count);
-                    addTyping(id,count);
+                    $('#residual').text(goalCount - count);
+                    addTypingCount(id, count);
                     return;
                 }
                 var m = results.find(o => o.id == id);
                 if (!m) {
                     $('#count').text(count);
-                    $('#residual').text(typingCount - count);
-                    addTyping(id,count);
+                    if (count > goalCount) {
+                        $('#residual').text(0);
+                    } else {
+
+                        $('#residual').text(goalCount - count);
+                    }
+                    addTypingCount(id, count);
                     return;
                 }
 
                 count = m.count + 1;
                 $('#count').text(count);
 
-                $('#residual').text(typingCount - count);
-                updateTyping(m.objectId,count);
+                $('#residual').text(goalCount - count);
+                updateTypingCount(m.objectId, count);
             });
         });
     </script>

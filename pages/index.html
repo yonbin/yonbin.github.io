@@ -180,11 +180,12 @@
                     return;
                 }
                 $.each(results, function (index, item) {
-                    $('#id'+item.id).find('.count').text(item.count+'/'+typingCount);
+                    $('#id'+item.id).find('.count').text(item.count+'/'+goalCount);
                     if(item.count>=20){
-                        $('#id'+(parseInt(item.id)+1)).parent().removeClass('lock');
+                        $('#id'+(parseInt(item.id)+1)).parent().removeClass('lock').addClass("unlock");
                     }
                 });
+                $('.unlock').find('i').remove();
 
                 $('.lock').find('a').attr('href','javascript:;');
 
