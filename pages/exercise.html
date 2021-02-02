@@ -417,6 +417,7 @@
             $('#username').text($.cookie("username"));
         });;
 
+        //　加载字符
         const id = getQueryVariable("id");
         var currentItem = typingData.find(o => o.id == id);
         var data = currentItem.data;
@@ -432,7 +433,6 @@
         var $firstLetter = $content.find('span').first().addClass('current');
         var firstLetter = $firstLetter.data('val');
 
-
         $('#keys .st0').removeClass('active');
         $('#keys #' + firstLetter).addClass('active');
 
@@ -443,7 +443,7 @@
             $(s).find('.st0').css('display', 'none');
             var f = s.querySelector('#' + firstLetter);
             $(f).css('display', 'block');
-            var hand = keyHands[firstLetter];
+            var hand = getHand(firstLetter);
             if (hand == 'left') {
                 $(s).find('#neutral-right').css('display', 'block');
                 $(s).find('#neutral-left').css('display', 'none');
@@ -494,7 +494,7 @@
                 $(s).find('.st0').css('display', 'none');
 
                 var nextKey = getVal($current.next().data('val'));
-                var hand = keyHands[nextKey];
+                var hand = getHand(nextKey);
                 if (hand == 'left') {
                     $(s).find('#neutral-right').css('display', 'block');
                     $(s).find('#neutral-left').css('display', 'none');

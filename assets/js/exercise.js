@@ -2,11 +2,16 @@ const keyCodes = {
     ' ': 'space',
     ';': 'semicolon'
 };
-const keyHands = {
-    'space': 'right',
-    'f': 'left',
-    'j': 'right'
-};
+
+var leftHandLetter = ['f', 'd', 's', 'a', 'g'];
+var rightHandLetter = ['j', 'k', 'l', ';', 'h'];
+function getHand(letter) {
+    if(leftHandLetter.indexOf(letter)!=-1){
+        return 'left';
+    }
+    return 'right';
+
+}
 
 
 const keyCodes2 = {

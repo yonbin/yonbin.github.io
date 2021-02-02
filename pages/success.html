@@ -64,7 +64,11 @@
                 count = m.count + 1;
                 $('#count').text(count);
 
-                $('#residual').text(goalCount - count);
+                if (count > goalCount) {
+                    $('#residual').text(0);
+                } else {
+                    $('#residual').text(goalCount - count);
+                }
                 updateTypingCount(m.objectId, count);
             });
         });
