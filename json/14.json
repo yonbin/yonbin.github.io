@@ -1,4 +1,4 @@
 {
     "topic":"14 时间转换",
-    "desc": "<p>输入一个整数，表示秒，然后转换成小时:分钟:秒的形式。</p><p><b>输入格式</b></p><p>输入一个整数N。</p><p><strong>输出格式</strong></p><p>输出转换后的时间表示，格式为“hours:minutes:seconds”。</p><p><strong>数据范围</strong></p><p>1≤N≤1000000</p><p><strong>样例输入</strong></p><p><code>8000</code></p><p><strong>样例输出</strong></p><p><code>2:3:20</code></p>"
+    "desc": "<p>输入一个整数，表示秒，然后转换成小时:分钟:秒的形式。</p><p><b>输入格式</b></p><p>输入一个整数N。</p><p><strong>输出格式</strong></p><p>输出转换后的时间表示，格式为“hours:minutes:seconds”。</p><p><strong>数据范围</strong></p><p>1≤N≤1000000</p><p><strong>样例输入</strong></p><p><code>8000</code></p><p><strong>样例输出</strong></p><p><code>2:13:20</code></p>"
 }
