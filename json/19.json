@@ -1,0 +1,4 @@
+{
+    "topic":"19 判断是否偶数？",
+    "desc": "<p>输入一个整数，判断是不是偶数，如果是就输出“Yes”，否则输出“No”。</p><p><strong>输入格式</strong></p><p>输入一个整数A，0&lt;=A&lt;=999999。</p><p><strong>输出格式</strong></p><p>输出 &#39;Yes&#39; 或 &#39;No&#39;。</p><p><strong>输入样例1</strong></p><p>20</p><p><strong>输出样例1</strong></p><p>Yes</p><p><strong>输入样例2</strong></p><p>13</p><p><strong>输出样例2</strong></p><p>No</p>"
+}

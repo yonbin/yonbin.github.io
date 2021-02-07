@@ -1,4 +1,4 @@
 {
-    "topic":"18 分数",
-    "desc": "<p>输入一个人的分数，如果分数&gt;=90 输出 A，如果分数&lt; 60 输出 Z。</p><p><strong>输入格式</strong></p><p>输入一个整数A，0&lt;=A&lt;=100。</p><p><strong>输出格式</strong></p><p>输出字母 &#39;A&#39; 或 &#39;Z&#39;。</p><p><strong>输入样例1</strong></p><p><code>99</code></p><p><strong>输出样例1</strong></p><p><code>A</code></p><p><strong>输入样例2</strong></p><p><code>40</code></p><p><strong>输出样例2</strong></p><p><code>Z</code></p>"
+    "topic":"18 成绩",
+    "desc": "<p>输入一个人的成绩，如果成绩&gt;=90 输出 A，如果成绩&lt; 60 输出 Z。</p><p><strong>输入格式</strong></p><p>输入一个整数A，0&lt;=A&lt;=100。</p><p><strong>输出格式</strong></p><p>输出字母 &#39;A&#39; 或 &#39;Z&#39;。</p><p><strong>输入样例1</strong></p><p><code>99</code></p><p><strong>输出样例1</strong></p><p><code>A</code></p><p><strong>输入样例2</strong></p><p><code>40</code></p><p><strong>输出样例2</strong></p><p><code>Z</code></p>"
 }
