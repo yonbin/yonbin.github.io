@@ -1,4 +1,4 @@
 {
     "topic":"16 奇数",
-    "desc": "<p><strong>输入格式</strong></p><p>无</p><p><strong>输出格式</strong></p><p>换行输出奇数。</p><p><strong>样例输入</strong></p><p><code>无</code></p><p><strong>样例输出</strong></p><p><code>1<br>3<br>5<br>7<br>9<br>...<br>99</code></p>"
+    "desc": "<p>输出0到100以内的奇数，包含0和100。<p><strong>输入格式</strong></p><p>无</p><p><strong>输出格式</strong></p><p>换行输出奇数。</p><p><strong>样例输入</strong></p><p><code>无</code></p><p><strong>样例输出</strong></p><p><code>1<br>3<br>5<br>7<br>9<br>...<br>99</code></p>"
 }
