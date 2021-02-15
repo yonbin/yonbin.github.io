@@ -1,0 +1,4 @@
+{
+    "topic":"20 判断奇偶",
+    "desc": "<p>输入一个整数，判断其奇偶，如果是偶数就输出“偶数”，如果是奇数就输出“奇数”。</p><p><strong>输入格式</strong></p><p>输入一个整数A，0&lt;=A&lt;=999999。</p><p><strong>输出格式</strong></p><p>输出 &#39;偶数&#39; 或 &#39;奇数&#39;。</p><p><strong>输入样例1</strong></p><p>20</p><p><strong>输出样例1</strong></p><p>偶数</p><p><strong>输入样例2</strong></p><p>13</p><p><strong>输出样例2</strong></p><p>奇数</p>"
+}

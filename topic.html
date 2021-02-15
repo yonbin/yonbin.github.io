@@ -109,7 +109,10 @@
     <script src="/assets/js/topic.js"></script>
     <script>
         $(function(){
-            $('header').load('/top.html');
+            $('header').load('/top.html',function(){
+                $('#item2').addClass('active');
+            });
+
             $('#username').text($.cookie("username"));
         })
     </script>
