@@ -1,0 +1,4 @@
+{
+    "topic":"22 输入三位数，计算各个位数之和",
+    "desc": "<p>输入一个三位数，输出它的各个位数之和。</p><p><strong>输入格式</strong></p><p>输入一个整数A，101&lt;=A&lt;=999。</p><p><strong>输出格式</strong></p><p>输出一个整数。</p><p><strong>输入样例</strong></p><p><code>315</code></p><p><strong>输出样例</strong></p><p><code>9</code></p>"
+}
