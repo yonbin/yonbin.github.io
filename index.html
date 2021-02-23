@@ -33,6 +33,7 @@
                                 <tr>
                                     <th scope="co1" style="width: 80px; text-align: center;">#</th>
                                     <th scope="col">标题</th>
+                                    <th scope="col">批改</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,12 +71,25 @@
                 var html = '<tr>';
                 html += '<th scope="row" style="width: 80px; text-align: center;">' + item.id + '</th>';
                 html += '<td><a href="topic.html?id=' + item.id + '">' + item.title + '</a></td>';
+                html += '<td><span id="id' + item.id + '"></span></td>'
                 html += '</tr>';
-
+                getData(item.id + '', function (res) {
+                    if (res.results.length <= 0) {
+                        return;
+                    }
+                    var row = res.results[0];
+                    if (row.answer == '1') {
+                        $('#id' + row.topic_id).text('正确').css("color", 'green');
+                    } else if (row.answer == '2') {
+                        $('#id' + row.topic_id).text('错误').css('color', 'red');
+                    } else {
+                        $('#id' + row.topic_id).text('正在批改');
+                    }
+                });
                 $tbody.append($(html));
             });
 
-            $('.card-body').height($tbody.height()+150);
+            $('.card-body').height($tbody.height() + 150);
         }
 
         $(function () {
