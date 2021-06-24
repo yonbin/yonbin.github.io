@@ -1,4 +1,0 @@
-{
-    "topic":"2 输出第 2 个数",
-    "desc": "<p>输入三个整数，输出第二个整数。</p> <p><strong>输入格式</strong></p> <p>输入三个整数A,B,C，用空格隔开，0≤A,B,C≤1000</p> <p><strong>输出格式</strong></p> <p>输出第二个数</p> <p><strong>样例输入</strong></p> <p><code>3 9 6</code></p> <p><strong>样例输出</strong></p> <p><code>9</code></p>"
-}

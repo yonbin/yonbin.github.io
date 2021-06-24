@@ -1,4 +1,0 @@
-{
-    "topic":"8 一颗白菜多少钱？",
-    "desc": "<p>编写一个程序，计算一颗白菜多少钱？</p><p><strong>输入格式</strong></p><p>第一行包含一个整数，表示一斤白菜多少钱；</p><p>第二行包含一个整数，表示一颗白菜多少斤；</p><p><strong>输出格式</strong></p><p>输出格式为“TOTAL = RMB X”，X为该白菜的价格。</p><p><strong>样例输入</strong></p><p><code> 2 <br> 5</code></p><p><strong>样例输出</strong></p><p><code>TOTAL = RMB 10</code></p>"
-}

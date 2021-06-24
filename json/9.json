@@ -1,4 +1,0 @@
-{
-    "topic":"9 可以买几斤白菜?",
-    "desc": "<p>编写一个程序，计算可以买几斤白菜？</p><p><strong>输入格式</strong></p><p>第一行包含一个整数，表示一斤白菜多少钱；</p><p>第二行包含一个整数，表示你的钱；</p><p><strong>输出格式</strong></p><p>输出格式为“TOTAL = X”，X为该白菜的斤数。</p><p><strong>样例输入</strong></p><p><code> 2<br>10</code></p><p><strong>样例输出</strong></p><p><code>TOTAL = 5</code></p>"
-}

@@ -1,4 +1,0 @@
-{
-    "topic":"24 同时整除2和5",
-    "desc": "<p>编写一个程序，输入一个整数，即能被 2 整除，又能被 5 整除，则输出“Yes”，否则输出“No”。</p><p><strong>输入格式</strong></p><p>整数A，0 &lt;A&lt;9999999</p><p><strong>输出格式</strong></p><p>Yes 或 No</p><p><strong>样例输入1</strong></p><p><code>20</code></p><p><strong>样例输出1</strong></p><p><code>Yes</code></p><p><strong>样例输入2</strong></p><p><code>15</code></p><p><strong>样例输出2</strong></p><p><code>No</code></p>"
-}

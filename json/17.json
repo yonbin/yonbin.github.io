@@ -1,4 +1,0 @@
-{
-    "topic":"17 交换两个变量的值",
-    "desc": "<p>输入两个整数，分别赋值给变量a、b，交换两个变量的值后输出a、b。</p><p><strong>输入格式</strong></p><p>输入两个整数a, b，用空格隔开。</p><p><strong>输出格式</strong></p><p>输出两个整数a, b，用空格隔开。</p><p><strong>样例输入</strong></p><p><code>5 3</code></p><p><strong>样例输出</strong></p><p><code>3 5</code></p>"
-}
